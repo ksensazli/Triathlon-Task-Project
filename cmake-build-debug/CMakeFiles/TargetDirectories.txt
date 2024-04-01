@@ -1,0 +1,3 @@
+/Users/ksensazli/CLionProjects/Triathlon (ETE Task)/cmake-build-debug/CMakeFiles/Triathlon__ETE_Task_.dir
+/Users/ksensazli/CLionProjects/Triathlon (ETE Task)/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/ksensazli/CLionProjects/Triathlon (ETE Task)/cmake-build-debug/CMakeFiles/rebuild_cache.dir
