@@ -10,9 +10,9 @@ using namespace std;
 //I define the constants I will use here to avoid confusion in the code.
 const int NUM_TEAMS = 300;
 const int NUM_ATHLETES_PER_TEAM = 3;
-const int SWIM_DISTANCE = 50;
-const int BIKE_DISTANCE = 400;
-const int RUN_DISTANCE = 100;
+const int SWIM_DISTANCE = 5000;
+const int BIKE_DISTANCE = 40000;
+const int RUN_DISTANCE = 10000;
 
 // Athlete class to represent individual athletes
 class Athlete {
