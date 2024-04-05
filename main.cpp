@@ -10,9 +10,9 @@ using namespace std;
 //I define the constants I will use here to avoid confusion in the code.
 const int NUM_TEAMS = 300;
 const int NUM_ATHLETES_PER_TEAM = 3;
-const int SWIM_DISTANCE = 5000;
-const int BIKE_DISTANCE = 40000;
-const int RUN_DISTANCE = 10000;
+const int SWIM_DISTANCE = 50;
+const int BIKE_DISTANCE = 400;
+const int RUN_DISTANCE = 100;
 
 // Athlete class to represent individual athletes
 class Athlete {
@@ -80,6 +80,10 @@ void calculatePosition(Athlete& athlete, int distance, int speedMultiplier) {
             if (athlete.athleteID == selectedAthlete)
             {
                 mtx.lock(); // Lock mutex before accessing shared resources
+                if (athlete.position > SWIM_DISTANCE + BIKE_DISTANCE)
+                {
+                    athlete.position = SWIM_DISTANCE + BIKE_DISTANCE; // Ensure the position doesn't exceed the swim + bike distance
+                }
                 cout << "Team " << athlete.teamID << " - Athlete " << athlete.athleteID << " - " << "Bike" << " - Position: " << athlete.position << " meters\n";
                 mtx.unlock(); // Unlock mutex after accessing shared resources
             }
@@ -102,6 +106,10 @@ void calculatePosition(Athlete& athlete, int distance, int speedMultiplier) {
             if (athlete.athleteID == selectedAthlete)
             {
                 mtx.lock(); // Lock mutex before accessing shared resources
+                if (athlete.position > SWIM_DISTANCE + BIKE_DISTANCE + RUN_DISTANCE)
+                {
+                    athlete.position = SWIM_DISTANCE + BIKE_DISTANCE + RUN_DISTANCE; // Ensure the position doesn't exceed the swim + bike + run distance
+                }
                 cout << "Team " << athlete.teamID << " - Athlete " << athlete.athleteID << " - " << "Run" << " - Position: " << athlete.position << " meters\n";
                 mtx.unlock(); // Unlock mutex after accessing shared resources
             }
